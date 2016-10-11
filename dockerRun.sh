@@ -11,6 +11,9 @@ docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat
 echo # Deploy war to tomcat
 curl https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war >/my/tomcat/webapps/sample.war
 
+echo #sftp
+docker run -v /my:/home/foo/share -p 11022:22 -d atmoz/sftp foo:123:1001
+
 echo #Start Google cAdvisor on 80 - Docker simple monitor
 docker run -d --name=cadvisor -p 80:8080  --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw  --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro google/cadvisor:latest
 
