@@ -11,3 +11,9 @@ docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw  --volume=/sys:/s
 
 echo Stop Google cAdvisor
 docker stop $(docker ps -a -f ancestor=google/cadvisor -q) && docker rm $(docker ps -a -f ancestor=google/cadvisor -q)
+
+echo Stop tomcat
+docker stop $(docker ps -a -f ancestor=tomcat -q) && docker rm $(docker ps -a -f ancestor=tomcat -q)
+
+echo tomcat logs
+docker logs $(docker ps -a -f ancestor=tomcat -q)
