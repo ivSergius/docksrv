@@ -6,6 +6,9 @@ docker run -d --name oracle12c -p 8080:8080 -p 1521:1521 -v /my/oracle12c/data:/
 echo #Start Tomcat
 docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat/webapps tomcat
 
+echo # Deploy war to tomcat
+curl https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war >/my/tomcat/webapps/sample.war
+
 echo #Start Google cAdvisor on 80 - Docker simple monitor
 docker run -d --name=cadvisor -p 80:8080  --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw  --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro google/cadvisor:latest
 
