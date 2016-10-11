@@ -6,6 +6,8 @@ docker run -d --name oracle12c -p 8080:8080 -p 1521:1521 -v /my/oracle12c/data:/
 echo #Start Tomcat
 docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat/webapps tomcat
 
+#docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat/webapps-v $HOME/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml:ro tomcat
+
 echo # Deploy war to tomcat
 curl https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war >/my/tomcat/webapps/sample.war
 
