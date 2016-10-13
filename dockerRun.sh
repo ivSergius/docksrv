@@ -8,8 +8,9 @@ docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat
 
 #docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat/webapps-v $HOME/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml:ro tomcat
 
-echo # Deploy war to tomcat
+echo # Deploy wars to tomcat
 curl https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war >/my/tomcat/webapps/sample.war
+curl https://github.com/ivSergius/docksrv/raw/master/res/testdb.war >/my/tomcat/webapps/testdb.war
 
 echo #sftp
 docker run -v /my:/home/foo/share -p 11022:22 -d atmoz/sftp foo:123:1001
