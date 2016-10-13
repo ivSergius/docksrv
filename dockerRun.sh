@@ -22,6 +22,7 @@ echo # Deploy wars to tomcat
 
 curl https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war >/my/tomcat/webapps/sample.war
 curl https://github.com/ivSergius/docksrv/raw/master/res/testdb.war >/my/tomcat/webapps/testdb.war
+curl https://github.com/ivSergius/docksrv/raw/master/res/testdb.war >/my/tomcat2/webapps/testdb.war
 
 echo #sftp
 docker run -v /my:/home/foo/share -p 11022:22 -d atmoz/sftp foo:123:1001
