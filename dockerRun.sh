@@ -30,5 +30,9 @@ docker run -v /my:/home/foo/share -p 11022:22 -d atmoz/sftp foo:123:1001
 echo #Start Google cAdvisor on 80 - Docker simple monitor
 docker run -d --name=cadvisor -p 80:8080  --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw  --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro google/cadvisor:latest
 
+echo #DockerUI is a web interface to interact with the Remote AP
+docker run -d -p 9000:9000 -v /var/run/docker.sock:/docker.sock --name dockerui abh1nav/dockerui:latest -e="/docker.sock"
+
+
 echo #Connect to logs sath89/oracle-12c
 docker logs -f $(docker ps -f ancestor=sath89/oracle-12c -q)
