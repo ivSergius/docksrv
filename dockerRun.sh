@@ -9,7 +9,7 @@ docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat
 #docker run -d --name tomcat -p 8888:8080 -v /my/tomcat/webapps:/usr/local/tomcat/webapps-v $HOME/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml:ro tomcat
 
 echo # Deploy wars to tomcat
-sudo chmod -R 777 /my/tomcat
+
 curl https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war >/my/tomcat/webapps/sample.war
 curl https://github.com/ivSergius/docksrv/raw/master/res/testdb.war >/my/tomcat/webapps/testdb.war
 
