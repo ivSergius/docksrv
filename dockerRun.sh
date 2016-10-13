@@ -1,5 +1,14 @@
 echo #Docker RUN script comments
 
+echo #make dir
+mkdir /my
+sudo chmod -R 777 /my/
+mkdir /my/oracle12c
+mkdir /my/tomcat
+mkdir /my/tomcat/webapps
+mkdir /my/tomcat2
+mkdir /my/tomcat2/webapps
+
 echo #rep: https://hub.docker.com/r/sath89/oracle-12c/
 docker run -d --name oracle12c -p 8080:8080 -p 1521:1521 -v /my/oracle12c/data:/u01/app/oracle -e DBCA_TOTAL_MEMORY=1024 --name=oracle12c sath89/oracle-12c
 
