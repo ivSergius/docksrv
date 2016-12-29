@@ -1,0 +1,8 @@
+
+
+# x64 ?
+uname -a
+
+#nix version
+cat /etc/issue
+
