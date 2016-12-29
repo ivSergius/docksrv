@@ -1,4 +1,12 @@
+#java version
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -version
 
+# java installation list
+sudo update-alternatives --config java
+
+
+#install openJDK - default
+sudo apt-get install default-jre
 
 # x64 ?
 uname -a
