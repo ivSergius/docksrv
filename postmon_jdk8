@@ -1,0 +1,17 @@
+# set repository with oracle jdk8
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+
+
+# install oracle jdk 8 
+sudo apt-get install oracle-java8-installer
+
+
+# chouse oracle jdk
+sudo update-alternatives --config java
+
+
+
+# run POSTMon
+java -classpath "./POSTMon.jar:./classes12.jar:./log4j-1.2.8.jar" tst.asulr.sisaev.POSTMonitor
