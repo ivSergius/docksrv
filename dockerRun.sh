@@ -32,6 +32,7 @@ docker run -d --name=cadvisor -p 80:8080  --volume=/:/rootfs:ro --volume=/var/ru
 
 echo #DockerUI is a web interface to interact with the Remote AP
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/docker.sock --name dockerui abh1nav/dockerui:latest -e="/docker.sock"
+#sudo docker run -d --restart=unless-stopped -p 9000:9000 -v /var/run/docker.sock:/docker.sock --name dockerui abh1nav/dockerui:latest -e="/docker.sock"
 
 echo #Haproxy - Simple loadbalanser
 docker run -d --name my-running-haproxy -v /my/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro haproxy:1.5	
